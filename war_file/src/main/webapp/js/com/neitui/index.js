@@ -19,8 +19,7 @@ String.format = function(format) {
 }
 
 $(function() {
-	var te, p;
-	template = [
+	var template = [
 			'<div class="row job-detail">',
 			'	<div class="col-md-1">',
 			'		<img src=./{0}></img>',
@@ -163,10 +162,19 @@ $(function() {
 				profile : '/image/1.jpg'
 			}];
 
+
+//	var jobs = SellController.testDwr('',function(jobs){
+//		_.each(jobs, function(job) {
+//    				var dom = String.format(template, job.poster, job.postTime,
+//    						job.title, job.city, job.position);
+//    				$('#jobList').insert(dom);
+//    			})
+//	});
+
 	_.each(jobs, function(job) {
 				var dom = String.format(template, job.poster, job.postTime,
 						job.title, job.city, job.position);
-				$('#jobList').insert(dom);
+				$('#jobList').append(dom);
 			})
 
 })

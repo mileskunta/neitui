@@ -6,7 +6,10 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <title>Opportunities</title>
 <script src="js/jQuery/jquery-1.8.3.min.js"></script>
+<script src="js/underscore/underscore-min.js"></script>
 <script charset="UTF-8" src="js/com/neitui/OpportunityController.js?v=3"></script>
+<script src="./dwr/interface/ShellController.js"></script>
+<script src="./dwr/engine.js"></script>
 <script src="js/com/neitui/index.js"></script>
 <link rel="stylesheet" media="screen" href="css/bootstrap.css">
 <link rel="stylesheet" media="screen" href="css/css.css">
