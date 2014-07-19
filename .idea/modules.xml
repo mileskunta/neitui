@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PRS_NEITUI.iml" filepath="$PROJECT_DIR$/PRS_NEITUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/war_file/PRS_NEITUI_war.iml" filepath="$PROJECT_DIR$/war_file/PRS_NEITUI_war.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WLS_PRS_NHT.iml" filepath="$PROJECT_DIR$/WLS_PRS_NHT.iml" />
+    </modules>
+  </component>
+</project>
+
