@@ -1,23 +1,3 @@
-isIE = false;
-toArray = function() {
-	return isIE ? function(a, i, j, res) {
-		res = [];
-		for (var x = 0, len = a.length; x < len; x++) {
-			res.push(a[x]);
-		}
-		return res.slice(i || 0, j || res.length);
-	} : function(a, i, j) {
-		return Array.prototype.slice.call(a, i || 0, j || a.length);
-	};
-}(),
-
-String.format = function(format) {
-	var args = toArray(arguments, 1);
-	return format.replace(/\{(\d+)\}/g, function(m, i) {
-				return args[i];
-			});
-}
-
 $(function() {
 	var template = ['<li>',
                     '   <div class="jobDetail">',
@@ -139,7 +119,7 @@ $(function() {
 	var jobs = ShellController.getJobs('',function(jobs){
 		_.each(jobs, function(job) {
     				var dom = String.format(template,job.position,job.location,job.salaryFrom,
-                    				job.salaryTo,job.degree,job.postTime,job.company,job.scale,job.address,job.requirement.join('<br>'));
+                    				job.salaryTo,job.degree,job.postTime.format("yyyy-MM-dd"),job.company,job.scale,job.address,job.requirement.join('<br>'));
                     				$('#jobList').append(dom);
     			})
 	});
