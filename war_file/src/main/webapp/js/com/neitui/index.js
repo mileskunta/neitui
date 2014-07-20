@@ -19,148 +19,138 @@ String.format = function(format) {
 }
 
 $(function() {
-	var template = [
-			'<div class="row job-detail">',
-			'	<div class="col-md-1">',
-			'		<img src=./{0}></img>',
-			'	</div>',
-			'	<div class="col-md-11">',
-			'		<div class="row">',
-			'			<div class="col-md-12">',
-			'				<a herf="http://baidu.com" target="_blank" class="user-name">{1}</a>',
-			'				<span>(Posted this job at:</span> <span>{3})</span>',
-			'			</div>',
-			'			<div class="col-md-12">',
-			'				<span><strong>{4}</strong>',
-			'				</span> <span class="note">•</span> <span>{5}</span> <span',
-			'					class="note">•</span> <span>{6}</span>',
-			'			</div>',
-			'			<div class="col-md-12">',
-			'				<span>Brief:</span> <span>{7}</span>',
-			'			</div>',
-			'			<div class="col-md-12">',
-			'				<span>Description:</span> <a href="jobDetail.jsp">',
-			'					<p class="job-description">',
-			'						<span ng-repeat="des in job.description"> {8}<br>',
-			'						</span>',
-			'					</p> </a>',
-			'			</div>',
-			'			<div class="top-right">',
-			'				<span>12 visits</span><span class="icons like-{9}">like</span>',
-			'			</div>', '		</div>', '	</div>', '</div>'].join('');
-	var jobs = [{
-				poster : 'Miles Zhong',
-				like : 'yes',
-				postTime : '2013-12-23',
-				title : 'Senior Software Engineer',
-				city : 'ShangHai',
-				position : 'PuDong Distrect',
-				brief : 'job brief description',
-				description : 'job descrition1 <br> job description2',
-				profile : '/image/2.jpg'
-			}, {
-				poster : 'Justin Liu',
-				like : 'no',
-				postTime : '2013-12-23',
-				title : 'Senior Software Engineer',
-				city : 'ShangHai',
-				position : 'PuDong Distrect',
-				brief : 'job brief description',
-				description : [
-						'1、具有扎实的计算机基础知识；',
-						'2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
-						'3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
-						'4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
-						'5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
-						'6、具备JavaScript框架开发经验者优先考虑。',
-						'7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。'],
-				profile : '/image/1.jpg'
-			}, {
-				poster : 'Justin Liu',
-				like : 'no',
-				postTime : '2013-12-23',
-				title : 'Senior Software Engineer',
-				city : 'ShangHai',
-				position : 'PuDong Distrect',
-				brief : 'job brief description',
-				description : [
-						'1、具有扎实的计算机基础知识；',
-						'2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
-						'3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
-						'4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
-						'5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
-						'6、具备JavaScript框架开发经验者优先考虑。',
-						'7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。'],
-				profile : '/image/1.jpg'
-			}, {
-				poster : 'Justin Liu',
-				like : 'no',
-				postTime : '2013-12-23',
-				title : 'Senior Software Engineer',
-				city : 'ShangHai',
-				position : 'PuDong Distrect',
-				brief : 'job brief description',
-				description : [
-						'1、具有扎实的计算机基础知识；',
-						'2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
-						'3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
-						'4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
-						'5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
-						'6、具备JavaScript框架开发经验者优先考虑。',
-						'7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。'],
-				profile : '/image/1.jpg'
-			}, {
-				poster : 'Justin Liu',
-				like : 'no',
-				postTime : '2013-12-23',
-				title : 'Senior Software Engineer',
-				city : 'ShangHai',
-				position : 'PuDong Distrect',
-				brief : 'job brief description',
-				description : [
-						'1、具有扎实的计算机基础知识；',
-						'2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
-						'3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
-						'4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
-						'5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
-						'6、具备JavaScript框架开发经验者优先考虑。',
-						'7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。'],
-				profile : '/image/1.jpg'
-			}, {
-				poster : 'Justin Liu',
-				like : 'no',
-				postTime : '2013-12-23',
-				title : 'Senior Software Engineer',
-				city : 'ShangHai',
-				position : 'PuDong Distrect',
-				brief : 'job brief description',
-				description : [
-						'1、具有扎实的计算机基础知识；',
-						'2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
-						'3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
-						'4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
-						'5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
-						'6、具备JavaScript框架开发经验者优先考虑。',
-						'7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。'],
-				profile : '/image/1.jpg'
-			}, {
-				poster : 'Justin Liu',
-				like : 'no',
-				postTime : '2013-12-23',
-				title : 'Senior Software Engineer',
-				city : 'ShangHai',
-				position : 'PuDong Distrect',
-				brief : 'job brief description',
-				description : [
-						'1、具有扎实的计算机基础知识；',
-						'2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
-						'3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
-						'4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
-						'5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
-						'6、具备JavaScript框架开发经验者优先考虑。',
-						'7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。'],
-				profile : '/image/1.jpg'
-			}];
+	var template = ['<li>',
+                    '   <div class="jobDetail">',
+                    '        <div class="positionBrief">',
+                    '           <a class="position" href="#"><strong>{0}</strong></a>',
+                    '            <a class="location" href="#">[{1}]</a>',
+                    '            <span class="salary">薪水：{2}-{3}</span>',
+                    '            <span class="degree">最低学历：{4}</span>',
+                    '            <span class="releaseDate">{5}</span>',
+                    '        </div>',
+                    '        <div class="companyBrief">',
+                    '            <span>公司：<strong>{6}</strong></span>',
+                    '            <span>规模：{7}</span>',
+                    '            <span>地址：{8}</span>',
+                    '        </div>',
+                    '        <div class="require">',
+                    '            <div class="require-wording">要求：</div>',
+                    '            <div class="require-cont">',
+                    '               {9}',
+                    '            </div>',
+                    '            <div class="clear"></div>',
+                    '        </div>',
+                    '    </div>',
+                    '</li>'].join('');
+	var jobs = [ {
+                        postTime : '2013-12-23',
+                        position : '前端工程師',
+                        salaryFrom:'12K',
+                        salaryTo:'25K',
+                        location : '上海',
+                        scale:'2000人以上',
+                        address:'上海市长宁区中山公园附近',
+                        degree:'本科',
+                        company:'大众点评',
+                        requirement : [
+                                '1、具有扎实的计算机基础知识；',
+                                '2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
+                                '3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
+                                '4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
+                                '5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
+                                '6、具备JavaScript框架开发经验者优先考虑。',
+                                '7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。']
+                    }, {
+                        postTime : '2013-12-23',
+                        position : '前端工程師',
+                        salaryFrom:'12K',
+                        salaryTo:'25K',
+                        location : '上海',
+                        scale:'2000人以上',
+                        address:'上海市长宁区中山公园附近',
+                        degree:'本科',
+                        company:'大众点评',
+                        requirement : [
+                                '1、具有扎实的计算机基础知识；',
+                                '2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
+                                '3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
+                                '4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
+                                '5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
+                                '6、具备JavaScript框架开发经验者优先考虑。',
+                                '7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。']
+                    }, {
+                        postTime : '2013-12-23',
+                        position : '前端工程師',
+                        salaryFrom:'12K',
+                        salaryTo:'25K',
+                        location : '上海',
+                        scale:'2000人以上',
+                        address:'上海市长宁区中山公园附近',
+                        degree:'本科',
+                        company:'大众点评',
+                        requirement : [
+                                '1、具有扎实的计算机基础知识；',
+                                '2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
+                                '3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
+                                '4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
+                                '5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
+                                '6、具备JavaScript框架开发经验者优先考虑。',
+                                '7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。']
+                    }, {
+                        postTime : '2013-12-23',
+                        position : '前端工程師',
+                        salaryFrom:'12K',
+                        salaryTo:'25K',
+                        location : '上海',
+                        scale:'2000人以上',
+                        address:'上海市长宁区中山公园附近',
+                        degree:'本科',
+                        company:'大众点评',
+                        requirement : [
+                                '1、具有扎实的计算机基础知识；',
+                                '2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
+                                '3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
+                                '4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
+                                '5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
+                                '6、具备JavaScript框架开发经验者优先考虑。',
+                                '7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。']
+                    }, {
+                        postTime : '2013-12-23',
+                        position : '前端工程師',
+                        salaryFrom:'12K',
+                        salaryTo:'25K',
+                        location : '上海',
+                        scale:'2000人以上',
+                        address:'上海市长宁区中山公园附近',
+                        degree:'本科',
+                        company:'大众点评',
+                        requirement : [
+                                '1、具有扎实的计算机基础知识；',
+                                '2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
+                                '3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
+                                '4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
+                                '5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
+                                '6、具备JavaScript框架开发经验者优先考虑。',
+                                '7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。']
+                    }, {
+                        postTime : '2013-12-23',
+                        position : '前端工程師',
+                        salaryFrom:'12K',
+                        salaryTo:'25K',
+                        location : '上海',
+                        scale:'2000人以上',
+                        address:'上海市长宁区中山公园附近',
+                        degree:'本科',
+                        company:'大众点评',
+                        requirement : [
+                                '1、具有扎实的计算机基础知识；',
+                                '2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
+                                '3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
+                                '4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
+                                '5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
+                                '6、具备JavaScript框架开发经验者优先考虑。',
+                                '7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。']
+                                }];
 
 
 //	var jobs = SellController.testDwr('',function(jobs){
@@ -172,8 +162,8 @@ $(function() {
 //	});
 
 	_.each(jobs, function(job) {
-				var dom = String.format(template, job.poster, job.postTime,
-						job.title, job.city, job.position);
+				var dom = String.format(template,job.position,job.location,job.salaryFrom,
+				job.salaryTo,job.degree,job.postTime,job.company,job.scale,job.address,job.requirement.join('<br>'));
 				$('#jobList').append(dom);
 			})
 

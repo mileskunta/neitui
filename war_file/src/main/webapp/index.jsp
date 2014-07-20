@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="cn-ZH" ng-app>
+<html lang="cn-ZH">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -37,22 +37,16 @@
 			</div>
 		</div>
 	</div>
-	<div id="main" class="container" ng-controller="OpportunityCtrl">
+	<div id="main" class="container">
 		<div class="col-xs-12 col-sm-9 panel panel-default ">
 			<div id="geo-selection">
 				<ul class="nav nav-pills">
-					<li><a>上海</a>
-					</li>
-					<li><a>北京</a>
-					</li>
-					<li><a>南京</a>
-					</li>
-					<li><a>苏州</a>
-					</li>
-					<li><a>杭州</a>
-					</li>
-					<li><a>武汉</a>
-					</li>
+					<li><a>上海</a></li>
+					<li><a>北京</a></li>
+					<li><a>南京</a></li>
+					<li><a>苏州</a></li>
+					<li><a>杭州</a></li>
+					<li><a>武汉</a></li>
 				</ul>
 			</div>
 			<div id="search" class="row">
@@ -66,36 +60,28 @@
 			</div>
 			<div id="quickReference">
 				<ul class="nav nav-pills">
-					<li><a>产品经理</a>
-					</li>
-					<li><a>运营</a>
-					</li>
-					<li><a>Java</a>
-					</li>
-					<li><a>前端</a>
-					</li>
-					<li><a>php</a>
-					</li>
-					<li><a>C++</a>
-					</li>
-					<li><a>Android</a>
-					</li>
-					<li><a>iOS</a>
-					</li>
-					<li><a>Python</a>
-					</li>
-					<li><a>Ruby</a>
-					</li>
+					<li><a>产品经理</a> </li>
+					<li><a>运营</a></li>
+					<li><a>Java</a></li>
+					<li><a>前端</a></li>
+					<li><a>php</a></li>
+					<li><a>C++</a></li>
+					<li><a>Android</a></li>
+					<li><a>iOS</a></li>
+					<li><a>Python</a></li>
+					<li><a>Ruby</a></li>
 				</ul>
 			</div>
-			<div id='jobList'></div>
+            <ul id='jobList'>
+
+            </ul>
 		</div>
 		<div class="col-xs-6 col-sm-3" id="sidebar" role="navigation">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h3 class="panel-title">推荐职位</h3>
 				</div>
-				<div class="col-xs-12" ng-repeat="job in goodJobs">
+				<div class="col-xs-12">
 					<span>{{job.name}}</span>
 				</div>
 			</div>
