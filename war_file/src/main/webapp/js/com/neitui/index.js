@@ -29,7 +29,7 @@ $(function() {
                     '            <span class="releaseDate">{5}</span>',
                     '        </div>',
                     '        <div class="companyBrief">',
-                    '            <span>公司：<strong>{6}</strong></span>',
+                    '            <span>公司：<a href="#"><strong>{6}</strong></a></span>',
                     '            <span>规模：{7}</span>',
                     '            <span>地址：{8}</span>',
                     '        </div>',
@@ -97,23 +97,6 @@ $(function() {
                                 '6、具备JavaScript框架开发经验者优先考虑。',
                                 '7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。']
                     }, {
-                        postTime : '2013-12-23',
-                        position : '前端工程師',
-                        salaryFrom:'12K',
-                        salaryTo:'25K',
-                        location : '上海',
-                        scale:'2000人以上',
-                        address:'上海市长宁区中山公园附近',
-                        degree:'本科',
-                        company:'大众点评',
-                        requirement : [
-                                '1、具有扎实的计算机基础知识；',
-                                '2、熟悉W3C标准及规范，熟悉HTML、CSS、JavaScript等技术；',
-                                '3、熟悉各类JavaScript框架，如jQuery、ExtJs、Yahoo UI、prototype、Moontools等;',
-                                '4、能熟练高效手工编写HTML、CSS及JS代码，确保代码对各种浏览器的良好兼容性；',
-                                '5、熟悉面向对象的软件设计方法、对设计模式有深入的理解及应用。',
-                                '6、具备JavaScript框架开发经验者优先考虑。',
-                                '7、具备游戏平台，游戏社区，游戏播放器开发经验者优先考虑。']
                     }, {
                         postTime : '2013-12-23',
                         position : '前端工程師',
@@ -153,18 +136,18 @@ $(function() {
                                 }];
 
 
-//	var jobs = SellController.testDwr('',function(jobs){
-//		_.each(jobs, function(job) {
-//    				var dom = String.format(template, job.poster, job.postTime,
-//    						job.title, job.city, job.position);
-//    				$('#jobList').insert(dom);
-//    			})
-//	});
+	var jobs = ShellController.getJobs('',function(jobs){
+		_.each(jobs, function(job) {
+    				var dom = String.format(template,job.position,job.location,job.salaryFrom,
+                    				job.salaryTo,job.degree,job.postTime,job.company,job.scale,job.address,job.requirement.join('<br>'));
+                    				$('#jobList').append(dom);
+    			})
+	});
 
-	_.each(jobs, function(job) {
-				var dom = String.format(template,job.position,job.location,job.salaryFrom,
-				job.salaryTo,job.degree,job.postTime,job.company,job.scale,job.address,job.requirement.join('<br>'));
-				$('#jobList').append(dom);
-			})
+//	_.each(jobs, function(job) {
+//				var dom = String.format(template,job.position,job.location,job.salaryFrom,
+//				job.salaryTo,job.degree,job.postTime,job.company,job.scale,job.address,job.requirement.join('<br>'));
+//				$('#jobList').append(dom);
+//			})
 
 })

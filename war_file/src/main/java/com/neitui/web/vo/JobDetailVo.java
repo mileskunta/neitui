@@ -1,5 +1,6 @@
 package com.neitui.web.vo;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -7,58 +8,97 @@ import java.util.List;
  * Created by Administrator on 2014/7/19.
  */
 public class JobDetailVo {
-    private String jobName;
-    private String jobTitle;
-    private Date postDate;
-    private String description;
-    private List<String> keyWords;
-    private String briefIntro;
+   private Date postTime;
+    private String position;
+    private String  salaryFrom;
+    private String  salaryTo;
+    private String  location ;
+    private String   scale;
+    private String  address;
+    private String   degree;
+    private String   company;
+    private List<String>   requirement;
 
-    public String getJobName() {
-        return jobName;
+    public Date getPostTime() {
+        return postTime;
     }
 
-    public void setJobName(String jobName) {
-        this.jobName = jobName;
+    public void setPostTime(Date postTime) {
+        this.postTime = postTime;
     }
 
-    public String getJobTitle() {
-        return jobTitle;
+    public String getPosition() {
+        return position;
     }
 
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
-    public Date getPostDate() {
-        return postDate;
+    public String getSalaryFrom() {
+        return salaryFrom;
     }
 
-    public void setPostDate(Date postDate) {
-        this.postDate = postDate;
+    public void setSalaryFrom(String salaryFrom) {
+        this.salaryFrom = salaryFrom;
     }
 
-    public String getDescription() {
-        return description;
+    public String getSalaryTo() {
+        return salaryTo;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setSalaryTo(String salaryTo) {
+        this.salaryTo = salaryTo;
     }
 
-    public List<String> getKeyWords() {
-        return keyWords;
+    public String getLocation() {
+        return location;
     }
 
-    public void setKeyWords(List<String> keyWords) {
-        this.keyWords = keyWords;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getBriefIntro() {
-        return briefIntro;
+    public String getScale() {
+        return scale;
     }
 
-    public void setBriefIntro(String briefIntro) {
-        this.briefIntro = briefIntro;
+    public void setScale(String scale) {
+        this.scale = scale;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDegree() {
+        return degree;
+    }
+
+    public void setDegree(String degree) {
+        this.degree = degree;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public List<String> getRequirement() {
+        if(this.requirement == null){
+            this.requirement = new ArrayList<String>();
+        }
+        return requirement;
+    }
+
+    public void setRequirement(List<String> requirement) {
+        this.requirement = requirement;
     }
 }
