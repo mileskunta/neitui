@@ -1,0 +1,10 @@
+<copy todir="target/classes/com/neitui/entity">
+
+    <fileset dir="src/main/java/com/neitui/entity">
+
+        <exclude name="**/*.java"/>
+
+    </fileset>
+
+</copy>
+<copy file="src/hibernate.cfg.xml" tofile="target/classes/hibernate.cfg.xml"/>
