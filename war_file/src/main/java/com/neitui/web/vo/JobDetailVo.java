@@ -8,6 +8,7 @@ import java.util.List;
  * Created by Administrator on 2014/7/19.
  */
 public class JobDetailVo {
+    private String jobId;
    private Date postTime;
     private String position;
     private String  salaryFrom;
@@ -16,7 +17,7 @@ public class JobDetailVo {
     private String   scale;
     private String  address;
     private String   degree;
-    private String   company;
+    private CompanyVo company;
     private List<String>   requirement;
 
     public Date getPostTime() {
@@ -83,11 +84,19 @@ public class JobDetailVo {
         this.degree = degree;
     }
 
-    public String getCompany() {
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    public CompanyVo getCompany() {
         return company;
     }
 
-    public void setCompany(String company) {
+    public void setCompany(CompanyVo company) {
         this.company = company;
     }
 
